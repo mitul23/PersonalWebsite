@@ -18,6 +18,11 @@
   </url>
   
   <url>
+    <loc>/tags/apply/</loc>
+    <lastmod>2020-07-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/categories/</loc>
     <lastmod>2020-07-21T00:00:00+00:00</lastmod>
   </url>
@@ -28,7 +33,27 @@
   </url>
   
   <url>
+    <loc>/tags/dates/</loc>
+    <lastmod>2020-07-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/tags/factors/</loc>
+    <lastmod>2020-07-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/finance/</loc>
+    <lastmod>2020-07-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/functions/</loc>
+    <lastmod>2020-07-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2020/07/r-intermediate/</loc>
     <lastmod>2020-07-21T00:00:00+00:00</lastmod>
   </url>
   
@@ -39,6 +64,11 @@
   
   <url>
     <loc>/tags/lists/</loc>
+    <lastmod>2020-07-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/loops/</loc>
     <lastmod>2020-07-21T00:00:00+00:00</lastmod>
   </url>
   
@@ -63,6 +93,11 @@
   </url>
   
   <url>
+    <loc>/categories/r-intermediate/</loc>
+    <lastmod>2020-07-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/tags/</loc>
     <lastmod>2020-07-21T00:00:00+00:00</lastmod>
   </url>
@@ -73,7 +108,7 @@
   </url>
   
   <url>
-    <loc>/categories/features/</loc>
+    <loc>/categories/r/</loc>
     <lastmod>2020-07-20T00:00:00+00:00</lastmod>
   </url>
   
@@ -88,7 +123,7 @@
   </url>
   
   <url>
-    <loc>/categories/tranquilpeak/</loc>
+    <loc>/categories/rmarkdown/</loc>
     <lastmod>2020-07-20T00:00:00+00:00</lastmod>
   </url>
   

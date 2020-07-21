@@ -6,24 +6,18 @@
     <description>Recent content in R on Data lover</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 23 Jul 2015 21:13:14 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 20 Jul 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/r/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Hello R Markdown</title>
-      <link>/2015/07/hello-r-markdown/</link>
-      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
+      <title>R Markdown</title>
+      <link>/2020/07/r-markdown/</link>
+      <pubDate>Mon, 20 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>/2015/07/hello-r-markdown/</guid>
-      <description>R Markdown This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
- Text formatting italic or italic bold bold code superscript2 and subscript2
- Book-level elements # first
-## second
-### third
- Unordered and ordered items You can embed an undordered item using - as follows
- unordered item 1 two  sub-one sub-two   ordered item 1 two  sub-one sub-two    “blockquotes”</description>
+      <guid>/2020/07/r-markdown/</guid>
+      <description>&lt;p&gt;This post shows how to format your RMarkdown. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see &lt;a href=&#34;http://rmarkdown.rstudio.com&#34;&gt;http://rmarkdown.rstudio.com&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     
   </channel>

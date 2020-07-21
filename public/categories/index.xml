@@ -21,20 +21,29 @@
     </item>
     
     <item>
-      <title>features</title>
-      <link>/categories/features/</link>
-      <pubDate>Mon, 20 Jul 2020 00:00:00 +0000</pubDate>
+      <title>R intermediate</title>
+      <link>/categories/r-intermediate/</link>
+      <pubDate>Tue, 21 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>/categories/features/</guid>
+      <guid>/categories/r-intermediate/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>tranquilpeak</title>
-      <link>/categories/tranquilpeak/</link>
+      <title>R</title>
+      <link>/categories/r/</link>
       <pubDate>Mon, 20 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>/categories/tranquilpeak/</guid>
+      <guid>/categories/r/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>RMarkdown</title>
+      <link>/categories/rmarkdown/</link>
+      <pubDate>Mon, 20 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/rmarkdown/</guid>
       <description></description>
     </item>
     
