@@ -21,6 +21,8 @@ In this post I will introduce the basics of R such as vectors and matrices, data
 
 We can select and subset anything using [] where the first argument is always row and second is always column i.e [row, column]. 
 
+adding some testings here to see if my site is up and running
+
 # Vectors and matrices
 creating a vector
 ```{r}
