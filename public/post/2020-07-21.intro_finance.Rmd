@@ -173,7 +173,7 @@ total_pv_B
 
 # Factors
 creating factors
-```{r, collapse=TRUE}
+```{r}
 credit_rating <- c("BB", "AAA", "AA", "CCC", "AA", "AAA", "B", "BB")
 credit_factor <- factor(credit_rating)
 
@@ -296,8 +296,6 @@ attributes(my_matrix)
 attr(my_matrix, which = "dim")
 
 my_factor <- factor(c("A", "A", "B"), ordered = T, levels = c("A", "B"))
-
-
 attributes(my_factor)
 ```
 

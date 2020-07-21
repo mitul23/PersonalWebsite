@@ -509,86 +509,86 @@ return_apple * weighted_avg_apple + return_IBM + weighted_avg_IBM</p>
 <a class="sourceLine" id="cb53-2" data-line-number="2">credit_factor &lt;-<span class="st"> </span><span class="kw">factor</span>(credit_rating)</a>
 <a class="sourceLine" id="cb53-3" data-line-number="3"></a>
 <a class="sourceLine" id="cb53-4" data-line-number="4"><span class="co"># factor levels</span></a>
-<a class="sourceLine" id="cb53-5" data-line-number="5"><span class="kw">levels</span>(credit_factor)</a>
-<a class="sourceLine" id="cb53-6" data-line-number="6"><span class="co">## [1] &quot;AA&quot;  &quot;AAA&quot; &quot;B&quot;   &quot;BB&quot;  &quot;CCC&quot;</span></a>
-<a class="sourceLine" id="cb53-7" data-line-number="7"><span class="kw">levels</span>(credit_factor) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;2A&quot;</span>, <span class="st">&quot;3A&quot;</span>, <span class="st">&quot;1B&quot;</span>, <span class="st">&quot;2B&quot;</span>, <span class="st">&quot;3C&quot;</span>)</a>
-<a class="sourceLine" id="cb53-8" data-line-number="8">credit_factor</a>
-<a class="sourceLine" id="cb53-9" data-line-number="9"><span class="co">## [1] 2B 3A 2A 3C 2A 3A 1B 2B</span></a>
-<a class="sourceLine" id="cb53-10" data-line-number="10"><span class="co">## Levels: 2A 3A 1B 2B 3C</span></a></code></pre></div>
+<a class="sourceLine" id="cb53-5" data-line-number="5"><span class="kw">levels</span>(credit_factor)</a></code></pre></div>
+<pre><code>## [1] &quot;AA&quot;  &quot;AAA&quot; &quot;B&quot;   &quot;BB&quot;  &quot;CCC&quot;</code></pre>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb55-1" data-line-number="1"><span class="kw">levels</span>(credit_factor) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;2A&quot;</span>, <span class="st">&quot;3A&quot;</span>, <span class="st">&quot;1B&quot;</span>, <span class="st">&quot;2B&quot;</span>, <span class="st">&quot;3C&quot;</span>)</a>
+<a class="sourceLine" id="cb55-2" data-line-number="2">credit_factor</a></code></pre></div>
+<pre><code>## [1] 2B 3A 2A 3C 2A 3A 1B 2B
+## Levels: 2A 3A 1B 2B 3C</code></pre>
 <p>bucket numerical variable into factors</p>
-<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb54-1" data-line-number="1">AAA_rank &lt;-<span class="st"> </span><span class="kw">as.numeric</span>(<span class="kw">c</span>(<span class="st">&quot;31&quot;</span>, <span class="st">&quot;48&quot;</span>, <span class="st">&quot;100&quot;</span>, <span class="st">&quot;53&quot;</span>, <span class="st">&quot;85&quot;</span>, <span class="st">&quot;73&quot;</span>, <span class="st">&quot;62&quot;</span>, <span class="st">&quot;74&quot;</span>, <span class="st">&quot;42&quot;</span>, <span class="st">&quot;38&quot;</span>, <span class="st">&quot;97&quot;</span>, <span class="st">&quot;61&quot;</span>, <span class="st">&quot;48&quot;</span>, <span class="st">&quot;86&quot;</span>, <span class="st">&quot;44&quot;</span>, <span class="st">&quot;9&quot;</span>, <span class="st">&quot;43&quot;</span>, <span class="st">&quot;18&quot;</span>, <span class="st">&quot;62&quot;</span>, <span class="st">&quot;38&quot;</span>, <span class="st">&quot;23&quot;</span>, <span class="st">&quot;37&quot;</span>, <span class="st">&quot;54&quot;</span>, <span class="st">&quot;80&quot;</span>, <span class="st">&quot;78&quot;</span>, <span class="st">&quot;93&quot;</span>, <span class="st">&quot;47&quot;</span>, <span class="st">&quot;100&quot;</span>, <span class="st">&quot;22&quot;</span>, <span class="st">&quot;22&quot;</span>, <span class="st">&quot;18&quot;</span>, <span class="st">&quot;26&quot;</span>, <span class="st">&quot;81&quot;</span>, <span class="st">&quot;17&quot;</span>, <span class="st">&quot;98&quot;</span>, <span class="st">&quot;4&quot;</span>, <span class="st">&quot;83&quot;</span>, <span class="st">&quot;5&quot;</span>, <span class="st">&quot;6&quot;</span>, <span class="st">&quot;52&quot;</span>, <span class="st">&quot;29&quot;</span>, <span class="st">&quot;44&quot;</span>, <span class="st">&quot;50&quot;</span>, <span class="st">&quot;2&quot;</span>, <span class="st">&quot;25&quot;</span>, <span class="st">&quot;19&quot;</span>, <span class="st">&quot;15&quot;</span>, <span class="st">&quot;42&quot;</span>, <span class="st">&quot;30&quot;</span>, <span class="st">&quot;27&quot;</span>))</a>
-<a class="sourceLine" id="cb54-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb54-3" data-line-number="3">AAA_factor &lt;-<span class="st"> </span><span class="kw">cut</span>(<span class="dt">x =</span> AAA_rank, <span class="dt">breaks =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">25</span>, <span class="dv">50</span>, <span class="dv">75</span>, <span class="dv">100</span>))</a>
-<a class="sourceLine" id="cb54-4" data-line-number="4"><span class="kw">levels</span>(AAA_factor) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;low&quot;</span>, <span class="st">&quot;medium&quot;</span>, <span class="st">&quot;high&quot;</span>, <span class="st">&quot;very_high&quot;</span>)</a>
-<a class="sourceLine" id="cb54-5" data-line-number="5"><span class="kw">plot</span>(AAA_factor)</a></code></pre></div>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb57-1" data-line-number="1">AAA_rank &lt;-<span class="st"> </span><span class="kw">as.numeric</span>(<span class="kw">c</span>(<span class="st">&quot;31&quot;</span>, <span class="st">&quot;48&quot;</span>, <span class="st">&quot;100&quot;</span>, <span class="st">&quot;53&quot;</span>, <span class="st">&quot;85&quot;</span>, <span class="st">&quot;73&quot;</span>, <span class="st">&quot;62&quot;</span>, <span class="st">&quot;74&quot;</span>, <span class="st">&quot;42&quot;</span>, <span class="st">&quot;38&quot;</span>, <span class="st">&quot;97&quot;</span>, <span class="st">&quot;61&quot;</span>, <span class="st">&quot;48&quot;</span>, <span class="st">&quot;86&quot;</span>, <span class="st">&quot;44&quot;</span>, <span class="st">&quot;9&quot;</span>, <span class="st">&quot;43&quot;</span>, <span class="st">&quot;18&quot;</span>, <span class="st">&quot;62&quot;</span>, <span class="st">&quot;38&quot;</span>, <span class="st">&quot;23&quot;</span>, <span class="st">&quot;37&quot;</span>, <span class="st">&quot;54&quot;</span>, <span class="st">&quot;80&quot;</span>, <span class="st">&quot;78&quot;</span>, <span class="st">&quot;93&quot;</span>, <span class="st">&quot;47&quot;</span>, <span class="st">&quot;100&quot;</span>, <span class="st">&quot;22&quot;</span>, <span class="st">&quot;22&quot;</span>, <span class="st">&quot;18&quot;</span>, <span class="st">&quot;26&quot;</span>, <span class="st">&quot;81&quot;</span>, <span class="st">&quot;17&quot;</span>, <span class="st">&quot;98&quot;</span>, <span class="st">&quot;4&quot;</span>, <span class="st">&quot;83&quot;</span>, <span class="st">&quot;5&quot;</span>, <span class="st">&quot;6&quot;</span>, <span class="st">&quot;52&quot;</span>, <span class="st">&quot;29&quot;</span>, <span class="st">&quot;44&quot;</span>, <span class="st">&quot;50&quot;</span>, <span class="st">&quot;2&quot;</span>, <span class="st">&quot;25&quot;</span>, <span class="st">&quot;19&quot;</span>, <span class="st">&quot;15&quot;</span>, <span class="st">&quot;42&quot;</span>, <span class="st">&quot;30&quot;</span>, <span class="st">&quot;27&quot;</span>))</a>
+<a class="sourceLine" id="cb57-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb57-3" data-line-number="3">AAA_factor &lt;-<span class="st"> </span><span class="kw">cut</span>(<span class="dt">x =</span> AAA_rank, <span class="dt">breaks =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">25</span>, <span class="dv">50</span>, <span class="dv">75</span>, <span class="dv">100</span>))</a>
+<a class="sourceLine" id="cb57-4" data-line-number="4"><span class="kw">levels</span>(AAA_factor) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;low&quot;</span>, <span class="st">&quot;medium&quot;</span>, <span class="st">&quot;high&quot;</span>, <span class="st">&quot;very_high&quot;</span>)</a>
+<a class="sourceLine" id="cb57-5" data-line-number="5"><span class="kw">plot</span>(AAA_factor)</a></code></pre></div>
 <p><img src="/post/2020-07-21.intro_finance_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
 <p>ordering factors</p>
-<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb55-1" data-line-number="1"><span class="kw">unique</span>(credit_rating)</a>
-<a class="sourceLine" id="cb55-2" data-line-number="2"><span class="co">## [1] &quot;BB&quot;  &quot;AAA&quot; &quot;AA&quot;  &quot;CCC&quot; &quot;B&quot;</span></a>
-<a class="sourceLine" id="cb55-3" data-line-number="3">credit_factor_ordered &lt;-<span class="st"> </span><span class="kw">factor</span>(credit_rating, <span class="dt">ordered =</span> <span class="ot">TRUE</span>, <span class="dt">levels =</span> <span class="kw">c</span>(<span class="st">&#39;AAA&#39;</span>,<span class="st">&#39;AA&#39;</span>,<span class="st">&#39;BB&#39;</span>,<span class="st">&#39;B&#39;</span>,<span class="st">&#39;CCC&#39;</span>))</a>
-<a class="sourceLine" id="cb55-4" data-line-number="4"><span class="kw">plot</span>(credit_factor_ordered)</a></code></pre></div>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb58-1" data-line-number="1"><span class="kw">unique</span>(credit_rating)</a>
+<a class="sourceLine" id="cb58-2" data-line-number="2"><span class="co">## [1] &quot;BB&quot;  &quot;AAA&quot; &quot;AA&quot;  &quot;CCC&quot; &quot;B&quot;</span></a>
+<a class="sourceLine" id="cb58-3" data-line-number="3">credit_factor_ordered &lt;-<span class="st"> </span><span class="kw">factor</span>(credit_rating, <span class="dt">ordered =</span> <span class="ot">TRUE</span>, <span class="dt">levels =</span> <span class="kw">c</span>(<span class="st">&#39;AAA&#39;</span>,<span class="st">&#39;AA&#39;</span>,<span class="st">&#39;BB&#39;</span>,<span class="st">&#39;B&#39;</span>,<span class="st">&#39;CCC&#39;</span>))</a>
+<a class="sourceLine" id="cb58-4" data-line-number="4"><span class="kw">plot</span>(credit_factor_ordered)</a></code></pre></div>
 <p><img src="/post/2020-07-21.intro_finance_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
 <p>subsetting a factor</p>
-<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb56-1" data-line-number="1"><span class="co"># Remove the A bonds at positions 3 and 7. Don&#39;t drop the A level.</span></a>
-<a class="sourceLine" id="cb56-2" data-line-number="2">keep_level &lt;-<span class="st"> </span>credit_factor[<span class="op">-</span><span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">7</span>)] <span class="co"># look at levels</span></a>
-<a class="sourceLine" id="cb56-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb56-4" data-line-number="4"><span class="co"># Plot keep_level</span></a>
-<a class="sourceLine" id="cb56-5" data-line-number="5"><span class="kw">plot</span>(keep_level)</a></code></pre></div>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb59-1" data-line-number="1"><span class="co"># Remove the A bonds at positions 3 and 7. Don&#39;t drop the A level.</span></a>
+<a class="sourceLine" id="cb59-2" data-line-number="2">keep_level &lt;-<span class="st"> </span>credit_factor[<span class="op">-</span><span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">7</span>)] <span class="co"># look at levels</span></a>
+<a class="sourceLine" id="cb59-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb59-4" data-line-number="4"><span class="co"># Plot keep_level</span></a>
+<a class="sourceLine" id="cb59-5" data-line-number="5"><span class="kw">plot</span>(keep_level)</a></code></pre></div>
 <p><img src="/post/2020-07-21.intro_finance_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
-<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb57-1" data-line-number="1"></a>
-<a class="sourceLine" id="cb57-2" data-line-number="2"><span class="co"># Remove the A bonds at positions 3 and 7. Drop the A level.</span></a>
-<a class="sourceLine" id="cb57-3" data-line-number="3">drop_level &lt;-<span class="st"> </span>credit_factor[<span class="op">-</span><span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">7</span>), drop =<span class="st"> </span><span class="ot">TRUE</span>]</a>
-<a class="sourceLine" id="cb57-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb57-5" data-line-number="5"><span class="co"># Plot drop_level</span></a>
-<a class="sourceLine" id="cb57-6" data-line-number="6"><span class="kw">plot</span>(drop_level)</a></code></pre></div>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb60-1" data-line-number="1"></a>
+<a class="sourceLine" id="cb60-2" data-line-number="2"><span class="co"># Remove the A bonds at positions 3 and 7. Drop the A level.</span></a>
+<a class="sourceLine" id="cb60-3" data-line-number="3">drop_level &lt;-<span class="st"> </span>credit_factor[<span class="op">-</span><span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">7</span>), drop =<span class="st"> </span><span class="ot">TRUE</span>]</a>
+<a class="sourceLine" id="cb60-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb60-5" data-line-number="5"><span class="co"># Plot drop_level</span></a>
+<a class="sourceLine" id="cb60-6" data-line-number="6"><span class="kw">plot</span>(drop_level)</a></code></pre></div>
 <p><img src="/post/2020-07-21.intro_finance_files/figure-html/unnamed-chunk-16-2.png" width="672" />
 stringsAsFactors - when creating data frames, R is to convert all characters into factors. This causes problems at times, so we can do the following in order to avoid the problem.</p>
-<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb58-1" data-line-number="1">credit_rating &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;AAA&quot;</span>, <span class="st">&quot;A&quot;</span>, <span class="st">&quot;BB&quot;</span>)</a>
-<a class="sourceLine" id="cb58-2" data-line-number="2">bond_owners &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Dan&quot;</span>, <span class="st">&quot;Tom&quot;</span>, <span class="st">&quot;Joe&quot;</span>)</a>
-<a class="sourceLine" id="cb58-3" data-line-number="3">bonds &lt;-<span class="st"> </span><span class="kw">data.frame</span>(credit_rating, bond_owners, <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)</a>
-<a class="sourceLine" id="cb58-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb58-5" data-line-number="5"><span class="co"># Then convert the relevant col to factor</span></a>
-<a class="sourceLine" id="cb58-6" data-line-number="6">bonds<span class="op">$</span>credit_factor &lt;-<span class="st"> </span><span class="kw">factor</span>(bonds<span class="op">$</span>credit_rating, <span class="dt">ordered =</span> <span class="ot">TRUE</span>, <span class="dt">levels =</span> <span class="kw">c</span>(<span class="st">&quot;AAA&quot;</span>,<span class="st">&quot;A&quot;</span>,<span class="st">&quot;BB&quot;</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb61-1" data-line-number="1">credit_rating &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;AAA&quot;</span>, <span class="st">&quot;A&quot;</span>, <span class="st">&quot;BB&quot;</span>)</a>
+<a class="sourceLine" id="cb61-2" data-line-number="2">bond_owners &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Dan&quot;</span>, <span class="st">&quot;Tom&quot;</span>, <span class="st">&quot;Joe&quot;</span>)</a>
+<a class="sourceLine" id="cb61-3" data-line-number="3">bonds &lt;-<span class="st"> </span><span class="kw">data.frame</span>(credit_rating, bond_owners, <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb61-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb61-5" data-line-number="5"><span class="co"># Then convert the relevant col to factor</span></a>
+<a class="sourceLine" id="cb61-6" data-line-number="6">bonds<span class="op">$</span>credit_factor &lt;-<span class="st"> </span><span class="kw">factor</span>(bonds<span class="op">$</span>credit_rating, <span class="dt">ordered =</span> <span class="ot">TRUE</span>, <span class="dt">levels =</span> <span class="kw">c</span>(<span class="st">&quot;AAA&quot;</span>,<span class="st">&quot;A&quot;</span>,<span class="st">&quot;BB&quot;</span>))</a></code></pre></div>
 </div>
 <div id="lists" class="section level1">
 <h1>Lists</h1>
 <p>creating lists</p>
-<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb59-1" data-line-number="1"></a>
-<a class="sourceLine" id="cb59-2" data-line-number="2">name &lt;-<span class="st"> &quot;Apple and IBM&quot;</span></a>
-<a class="sourceLine" id="cb59-3" data-line-number="3">apple &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">109.49</span>, <span class="fl">109.90</span>, <span class="fl">109.11</span>, <span class="fl">109.95</span>, <span class="fl">111.03</span>)</a>
-<a class="sourceLine" id="cb59-4" data-line-number="4">ibm &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">159.82</span>, <span class="fl">160.02</span>, <span class="fl">159.84</span>, <span class="fl">160.35</span>, <span class="fl">164.79</span>)</a>
-<a class="sourceLine" id="cb59-5" data-line-number="5">cor_matrix &lt;-<span class="st"> </span><span class="kw">cor</span>(<span class="kw">cbind</span>(apple, ibm))</a>
-<a class="sourceLine" id="cb59-6" data-line-number="6">portfolio &lt;-<span class="st"> </span><span class="kw">list</span>(name, apple, ibm, cor_matrix)</a>
-<a class="sourceLine" id="cb59-7" data-line-number="7">portfolio</a>
-<a class="sourceLine" id="cb59-8" data-line-number="8"><span class="co">## [[1]]</span></a>
-<a class="sourceLine" id="cb59-9" data-line-number="9"><span class="co">## [1] &quot;Apple and IBM&quot;</span></a>
-<a class="sourceLine" id="cb59-10" data-line-number="10"><span class="co">## </span></a>
-<a class="sourceLine" id="cb59-11" data-line-number="11"><span class="co">## [[2]]</span></a>
-<a class="sourceLine" id="cb59-12" data-line-number="12"><span class="co">## [1] 109.49 109.90 109.11 109.95 111.03</span></a>
-<a class="sourceLine" id="cb59-13" data-line-number="13"><span class="co">## </span></a>
-<a class="sourceLine" id="cb59-14" data-line-number="14"><span class="co">## [[3]]</span></a>
-<a class="sourceLine" id="cb59-15" data-line-number="15"><span class="co">## [1] 159.82 160.02 159.84 160.35 164.79</span></a>
-<a class="sourceLine" id="cb59-16" data-line-number="16"><span class="co">## </span></a>
-<a class="sourceLine" id="cb59-17" data-line-number="17"><span class="co">## [[4]]</span></a>
-<a class="sourceLine" id="cb59-18" data-line-number="18"><span class="co">##           apple       ibm</span></a>
-<a class="sourceLine" id="cb59-19" data-line-number="19"><span class="co">## apple 1.0000000 0.9131575</span></a>
-<a class="sourceLine" id="cb59-20" data-line-number="20"><span class="co">## ibm   0.9131575 1.0000000</span></a></code></pre></div>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb62-1" data-line-number="1"></a>
+<a class="sourceLine" id="cb62-2" data-line-number="2">name &lt;-<span class="st"> &quot;Apple and IBM&quot;</span></a>
+<a class="sourceLine" id="cb62-3" data-line-number="3">apple &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">109.49</span>, <span class="fl">109.90</span>, <span class="fl">109.11</span>, <span class="fl">109.95</span>, <span class="fl">111.03</span>)</a>
+<a class="sourceLine" id="cb62-4" data-line-number="4">ibm &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">159.82</span>, <span class="fl">160.02</span>, <span class="fl">159.84</span>, <span class="fl">160.35</span>, <span class="fl">164.79</span>)</a>
+<a class="sourceLine" id="cb62-5" data-line-number="5">cor_matrix &lt;-<span class="st"> </span><span class="kw">cor</span>(<span class="kw">cbind</span>(apple, ibm))</a>
+<a class="sourceLine" id="cb62-6" data-line-number="6">portfolio &lt;-<span class="st"> </span><span class="kw">list</span>(name, apple, ibm, cor_matrix)</a>
+<a class="sourceLine" id="cb62-7" data-line-number="7">portfolio</a>
+<a class="sourceLine" id="cb62-8" data-line-number="8"><span class="co">## [[1]]</span></a>
+<a class="sourceLine" id="cb62-9" data-line-number="9"><span class="co">## [1] &quot;Apple and IBM&quot;</span></a>
+<a class="sourceLine" id="cb62-10" data-line-number="10"><span class="co">## </span></a>
+<a class="sourceLine" id="cb62-11" data-line-number="11"><span class="co">## [[2]]</span></a>
+<a class="sourceLine" id="cb62-12" data-line-number="12"><span class="co">## [1] 109.49 109.90 109.11 109.95 111.03</span></a>
+<a class="sourceLine" id="cb62-13" data-line-number="13"><span class="co">## </span></a>
+<a class="sourceLine" id="cb62-14" data-line-number="14"><span class="co">## [[3]]</span></a>
+<a class="sourceLine" id="cb62-15" data-line-number="15"><span class="co">## [1] 159.82 160.02 159.84 160.35 164.79</span></a>
+<a class="sourceLine" id="cb62-16" data-line-number="16"><span class="co">## </span></a>
+<a class="sourceLine" id="cb62-17" data-line-number="17"><span class="co">## [[4]]</span></a>
+<a class="sourceLine" id="cb62-18" data-line-number="18"><span class="co">##           apple       ibm</span></a>
+<a class="sourceLine" id="cb62-19" data-line-number="19"><span class="co">## apple 1.0000000 0.9131575</span></a>
+<a class="sourceLine" id="cb62-20" data-line-number="20"><span class="co">## ibm   0.9131575 1.0000000</span></a></code></pre></div>
 <p>named lists</p>
-<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb60-1" data-line-number="1"><span class="kw">names</span>(portfolio) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;portfolio_name&quot;</span>, <span class="st">&quot;apple&quot;</span>, <span class="st">&quot;ibm&quot;</span>, <span class="st">&quot;correlation&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb63-1" data-line-number="1"><span class="kw">names</span>(portfolio) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;portfolio_name&quot;</span>, <span class="st">&quot;apple&quot;</span>, <span class="st">&quot;ibm&quot;</span>, <span class="st">&quot;correlation&quot;</span>)</a></code></pre></div>
 <p>access lists</p>
-<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb61-1" data-line-number="1">portfolio[<span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">3</span>)]</a>
-<a class="sourceLine" id="cb61-2" data-line-number="2"><span class="co">## $apple</span></a>
-<a class="sourceLine" id="cb61-3" data-line-number="3"><span class="co">## [1] 109.49 109.90 109.11 109.95 111.03</span></a>
-<a class="sourceLine" id="cb61-4" data-line-number="4"><span class="co">## </span></a>
-<a class="sourceLine" id="cb61-5" data-line-number="5"><span class="co">## $ibm</span></a>
-<a class="sourceLine" id="cb61-6" data-line-number="6"><span class="co">## [1] 159.82 160.02 159.84 160.35 164.79</span></a>
-<a class="sourceLine" id="cb61-7" data-line-number="7">portfolio<span class="op">$</span>correlation</a>
-<a class="sourceLine" id="cb61-8" data-line-number="8"><span class="co">##           apple       ibm</span></a>
-<a class="sourceLine" id="cb61-9" data-line-number="9"><span class="co">## apple 1.0000000 0.9131575</span></a>
-<a class="sourceLine" id="cb61-10" data-line-number="10"><span class="co">## ibm   0.9131575 1.0000000</span></a></code></pre></div>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb64-1" data-line-number="1">portfolio[<span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">3</span>)]</a>
+<a class="sourceLine" id="cb64-2" data-line-number="2"><span class="co">## $apple</span></a>
+<a class="sourceLine" id="cb64-3" data-line-number="3"><span class="co">## [1] 109.49 109.90 109.11 109.95 111.03</span></a>
+<a class="sourceLine" id="cb64-4" data-line-number="4"><span class="co">## </span></a>
+<a class="sourceLine" id="cb64-5" data-line-number="5"><span class="co">## $ibm</span></a>
+<a class="sourceLine" id="cb64-6" data-line-number="6"><span class="co">## [1] 159.82 160.02 159.84 160.35 164.79</span></a>
+<a class="sourceLine" id="cb64-7" data-line-number="7">portfolio<span class="op">$</span>correlation</a>
+<a class="sourceLine" id="cb64-8" data-line-number="8"><span class="co">##           apple       ibm</span></a>
+<a class="sourceLine" id="cb64-9" data-line-number="9"><span class="co">## apple 1.0000000 0.9131575</span></a>
+<a class="sourceLine" id="cb64-10" data-line-number="10"><span class="co">## ibm   0.9131575 1.0000000</span></a></code></pre></div>
 <p>adding to lists</p>
-<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb62-1" data-line-number="1">portfolio<span class="op">$</span>weight &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dt">apple =</span> <span class="fl">0.20</span>, <span class="dt">ibm =</span> <span class="fl">0.80</span>) <span class="co"># weights to portfolio</span></a>
-<a class="sourceLine" id="cb62-2" data-line-number="2">portfolio</a></code></pre></div>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb65-1" data-line-number="1">portfolio<span class="op">$</span>weight &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dt">apple =</span> <span class="fl">0.20</span>, <span class="dt">ibm =</span> <span class="fl">0.80</span>) <span class="co"># weights to portfolio</span></a>
+<a class="sourceLine" id="cb65-2" data-line-number="2">portfolio</a></code></pre></div>
 <pre><code>## $portfolio_name
 ## [1] &quot;Apple and IBM&quot;
 ## 
@@ -607,8 +607,8 @@ stringsAsFactors - when creating data frames, R is to convert all characters int
 ## apple   ibm 
 ##   0.2   0.8</code></pre>
 <p>removing from lists</p>
-<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb64-1" data-line-number="1">portfolio<span class="op">$</span>ibm &lt;-<span class="st"> </span><span class="ot">NULL</span></a>
-<a class="sourceLine" id="cb64-2" data-line-number="2">portfolio</a></code></pre></div>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb67-1" data-line-number="1">portfolio<span class="op">$</span>ibm &lt;-<span class="st"> </span><span class="ot">NULL</span></a>
+<a class="sourceLine" id="cb67-2" data-line-number="2">portfolio</a></code></pre></div>
 <pre><code>## $portfolio_name
 ## [1] &quot;Apple and IBM&quot;
 ## 
@@ -624,23 +624,23 @@ stringsAsFactors - when creating data frames, R is to convert all characters int
 ## apple   ibm 
 ##   0.2   0.8</code></pre>
 <p>split into two data frames</p>
-<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb66-1" data-line-number="1">cash &lt;-<span class="st"> </span><span class="kw">data.frame</span>(</a>
-<a class="sourceLine" id="cb66-2" data-line-number="2">    <span class="dt">company =</span> <span class="kw">rep</span>(<span class="kw">c</span>(<span class="st">&quot;A&quot;</span>,<span class="st">&quot;B&quot;</span>),<span class="dt">each =</span> <span class="dv">2</span>),</a>
-<a class="sourceLine" id="cb66-3" data-line-number="3">    <span class="dt">cash_flow =</span> <span class="kw">c</span>(<span class="dv">1000</span>, <span class="dv">4000</span>, <span class="dv">200</span>, <span class="dv">500</span>),</a>
-<a class="sourceLine" id="cb66-4" data-line-number="4">    <span class="dt">year =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>, <span class="dv">1</span>,<span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb66-5" data-line-number="5">)</a>
-<a class="sourceLine" id="cb66-6" data-line-number="6">cash</a></code></pre></div>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb69-1" data-line-number="1">cash &lt;-<span class="st"> </span><span class="kw">data.frame</span>(</a>
+<a class="sourceLine" id="cb69-2" data-line-number="2">    <span class="dt">company =</span> <span class="kw">rep</span>(<span class="kw">c</span>(<span class="st">&quot;A&quot;</span>,<span class="st">&quot;B&quot;</span>),<span class="dt">each =</span> <span class="dv">2</span>),</a>
+<a class="sourceLine" id="cb69-3" data-line-number="3">    <span class="dt">cash_flow =</span> <span class="kw">c</span>(<span class="dv">1000</span>, <span class="dv">4000</span>, <span class="dv">200</span>, <span class="dv">500</span>),</a>
+<a class="sourceLine" id="cb69-4" data-line-number="4">    <span class="dt">year =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>, <span class="dv">1</span>,<span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb69-5" data-line-number="5">)</a>
+<a class="sourceLine" id="cb69-6" data-line-number="6">cash</a></code></pre></div>
 <pre><code>##   company cash_flow year
 ## 1       A      1000    1
 ## 2       A      4000    3
 ## 3       B       200    1
 ## 4       B       500    2</code></pre>
-<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb68-1" data-line-number="1">grouping &lt;-<span class="st"> </span>cash<span class="op">$</span>company</a>
-<a class="sourceLine" id="cb68-2" data-line-number="2">grouping</a></code></pre></div>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb71-1" data-line-number="1">grouping &lt;-<span class="st"> </span>cash<span class="op">$</span>company</a>
+<a class="sourceLine" id="cb71-2" data-line-number="2">grouping</a></code></pre></div>
 <pre><code>## [1] A A B B
 ## Levels: A B</code></pre>
-<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb70-1" data-line-number="1">split_cash &lt;-<span class="st"> </span><span class="kw">split</span>(cash, grouping)</a>
-<a class="sourceLine" id="cb70-2" data-line-number="2">split_cash</a></code></pre></div>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb73-1" data-line-number="1">split_cash &lt;-<span class="st"> </span><span class="kw">split</span>(cash, grouping)</a>
+<a class="sourceLine" id="cb73-2" data-line-number="2">split_cash</a></code></pre></div>
 <pre><code>## $A
 ##   company cash_flow year
 ## 1       A      1000    1
@@ -650,33 +650,33 @@ stringsAsFactors - when creating data frames, R is to convert all characters int
 ##   company cash_flow year
 ## 3       B       200    1
 ## 4       B       500    2</code></pre>
-<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb72-1" data-line-number="1">original_cash &lt;-<span class="st"> </span><span class="kw">unsplit</span>(split_cash, grouping) <span class="co"># back to original</span></a>
-<a class="sourceLine" id="cb72-2" data-line-number="2">original_cash</a></code></pre></div>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb75-1" data-line-number="1">original_cash &lt;-<span class="st"> </span><span class="kw">unsplit</span>(split_cash, grouping) <span class="co"># back to original</span></a>
+<a class="sourceLine" id="cb75-2" data-line-number="2">original_cash</a></code></pre></div>
 <pre><code>##   company cash_flow year
 ## 1       A      1000    1
 ## 2       A      4000    3
 ## 3       B       200    1
 ## 4       B       500    2</code></pre>
 <p>Split-Apply-Combine</p>
-<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb74-1" data-line-number="1">split_cash<span class="op">$</span>B<span class="op">$</span>cash_flow</a>
-<a class="sourceLine" id="cb74-2" data-line-number="2"><span class="co">## [1] 200 500</span></a>
-<a class="sourceLine" id="cb74-3" data-line-number="3">split_cash<span class="op">$</span>B<span class="op">$</span>cash_flow &lt;-<span class="st"> </span><span class="dv">0</span></a>
-<a class="sourceLine" id="cb74-4" data-line-number="4">cash_no_A &lt;-<span class="st"> </span><span class="kw">unsplit</span>(split_cash, grouping)</a>
-<a class="sourceLine" id="cb74-5" data-line-number="5">cash_no_A</a>
-<a class="sourceLine" id="cb74-6" data-line-number="6"><span class="co">##   company cash_flow year</span></a>
-<a class="sourceLine" id="cb74-7" data-line-number="7"><span class="co">## 1       A      1000    1</span></a>
-<a class="sourceLine" id="cb74-8" data-line-number="8"><span class="co">## 2       A      4000    3</span></a>
-<a class="sourceLine" id="cb74-9" data-line-number="9"><span class="co">## 3       B         0    1</span></a>
-<a class="sourceLine" id="cb74-10" data-line-number="10"><span class="co">## 4       B         0    2</span></a></code></pre></div>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb77-1" data-line-number="1">split_cash<span class="op">$</span>B<span class="op">$</span>cash_flow</a>
+<a class="sourceLine" id="cb77-2" data-line-number="2"><span class="co">## [1] 200 500</span></a>
+<a class="sourceLine" id="cb77-3" data-line-number="3">split_cash<span class="op">$</span>B<span class="op">$</span>cash_flow &lt;-<span class="st"> </span><span class="dv">0</span></a>
+<a class="sourceLine" id="cb77-4" data-line-number="4">cash_no_A &lt;-<span class="st"> </span><span class="kw">unsplit</span>(split_cash, grouping)</a>
+<a class="sourceLine" id="cb77-5" data-line-number="5">cash_no_A</a>
+<a class="sourceLine" id="cb77-6" data-line-number="6"><span class="co">##   company cash_flow year</span></a>
+<a class="sourceLine" id="cb77-7" data-line-number="7"><span class="co">## 1       A      1000    1</span></a>
+<a class="sourceLine" id="cb77-8" data-line-number="8"><span class="co">## 2       A      4000    3</span></a>
+<a class="sourceLine" id="cb77-9" data-line-number="9"><span class="co">## 3       B         0    1</span></a>
+<a class="sourceLine" id="cb77-10" data-line-number="10"><span class="co">## 4       B         0    2</span></a></code></pre></div>
 <p>Attributes</p>
-<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb75-1" data-line-number="1">my_matrix &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>), <span class="dt">nrow =</span> <span class="dv">2</span>, <span class="dt">ncol =</span> <span class="dv">3</span>)</a>
-<a class="sourceLine" id="cb75-2" data-line-number="2"><span class="kw">rownames</span>(my_matrix) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Row1&quot;</span>, <span class="st">&quot;Row2&quot;</span>)</a>
-<a class="sourceLine" id="cb75-3" data-line-number="3"><span class="kw">colnames</span>(my_matrix) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Col1&quot;</span>, <span class="st">&quot;Col2&quot;</span>, <span class="st">&quot;Col3&quot;</span>)</a>
-<a class="sourceLine" id="cb75-4" data-line-number="4">my_matrix</a></code></pre></div>
+<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb78-1" data-line-number="1">my_matrix &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>), <span class="dt">nrow =</span> <span class="dv">2</span>, <span class="dt">ncol =</span> <span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb78-2" data-line-number="2"><span class="kw">rownames</span>(my_matrix) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Row1&quot;</span>, <span class="st">&quot;Row2&quot;</span>)</a>
+<a class="sourceLine" id="cb78-3" data-line-number="3"><span class="kw">colnames</span>(my_matrix) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Col1&quot;</span>, <span class="st">&quot;Col2&quot;</span>, <span class="st">&quot;Col3&quot;</span>)</a>
+<a class="sourceLine" id="cb78-4" data-line-number="4">my_matrix</a></code></pre></div>
 <pre><code>##      Col1 Col2 Col3
 ## Row1    1    3    5
 ## Row2    2    4    6</code></pre>
-<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb77-1" data-line-number="1"><span class="kw">attributes</span>(my_matrix)</a></code></pre></div>
+<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb80-1" data-line-number="1"><span class="kw">attributes</span>(my_matrix)</a></code></pre></div>
 <pre><code>## $dim
 ## [1] 2 3
 ## 
@@ -686,12 +686,10 @@ stringsAsFactors - when creating data frames, R is to convert all characters int
 ## 
 ## $dimnames[[2]]
 ## [1] &quot;Col1&quot; &quot;Col2&quot; &quot;Col3&quot;</code></pre>
-<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb79-1" data-line-number="1"><span class="kw">attr</span>(my_matrix, <span class="dt">which =</span> <span class="st">&quot;dim&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb82-1" data-line-number="1"><span class="kw">attr</span>(my_matrix, <span class="dt">which =</span> <span class="st">&quot;dim&quot;</span>)</a></code></pre></div>
 <pre><code>## [1] 2 3</code></pre>
-<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb81-1" data-line-number="1">my_factor &lt;-<span class="st"> </span><span class="kw">factor</span>(<span class="kw">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;A&quot;</span>, <span class="st">&quot;B&quot;</span>), <span class="dt">ordered =</span> T, <span class="dt">levels =</span> <span class="kw">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;B&quot;</span>))</a>
-<a class="sourceLine" id="cb81-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb81-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb81-4" data-line-number="4"><span class="kw">attributes</span>(my_factor)</a></code></pre></div>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb84-1" data-line-number="1">my_factor &lt;-<span class="st"> </span><span class="kw">factor</span>(<span class="kw">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;A&quot;</span>, <span class="st">&quot;B&quot;</span>), <span class="dt">ordered =</span> T, <span class="dt">levels =</span> <span class="kw">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;B&quot;</span>))</a>
+<a class="sourceLine" id="cb84-2" data-line-number="2"><span class="kw">attributes</span>(my_factor)</a></code></pre></div>
 <pre><code>## $levels
 ## [1] &quot;A&quot; &quot;B&quot;
 ## 
