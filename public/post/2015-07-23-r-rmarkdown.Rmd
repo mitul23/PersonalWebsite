@@ -1,0 +1,63 @@
+---
+title: "Hello R Markdown"
+author: "Frida Gomam"
+date: 2015-07-23T21:13:14-05:00
+categories: ["R"]
+tags: ["R Markdown", "plot", "regression"]
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(collapse = TRUE)
+```
+
+# R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+# Text formatting 
+
+
+ *italic*  or _italic_
+ **bold**   __bold__
+ `code`
+ superscript^2^ and subscript~2~
+
+
+
+# Book-level elements
+
+`# first`
+
+`## second`
+
+`### third`
+
+# Unordered and ordered items
+
+You can embed an undordered item using - as follows 
+
+- unordered item 1
+- two
+    - sub-one
+    - sub-two
+    
+1. ordered item 1
+2. two
+    - sub-one
+    - sub-two
+    
+> "blockquotes"
+>
+> --- Mitul Patel
+
+You can also embed plots. See Figure \@ref(fig:pie) for example:
+
+```{r pie, fig.cap='A fancy pie chart.', tidy=FALSE}
+par(mar = c(0, 1, 0, 1))
+pie(
+  c(280, 60, 20),
+  c('Sky', 'Sunny side of pyramid', 'Shady side of pyramid'),
+  col = c('#0292D8', '#F7EA39', '#C4B632'),
+  init.angle = -50, border = NA
+)
+```

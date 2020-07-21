@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pages on Data lover</title>
+    <link>/page/</link>
+    <description>Recent content in Pages on Data lover</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 20 Jul 2020 21:48:51 -0700</lastBuildDate>
+    
+	<atom:link href="/page/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Experience</title>
+      <link>/page/experience/</link>
+      <pubDate>Mon, 20 Jul 2020 21:48:51 -0700</pubDate>
+      
+      <guid>/page/experience/</guid>
+      <description>During my learning journey into data science I’ve worked on many different data science projects in python as well in R and SQL. However, I’ve had the most extensive experience in implementing all of my learning skills in the healthcare industry. Working with such large amount of messy health data pushed me to coming up with innovative solutions for doing analysis.
+For the past couple of months, I have mainly worked on large amount of health data, extracting useful information in the graphical form, applying statistical techniques, developing predictive models, creating dashboards in R using Shiny, flexdashboard, shinydashboard and producting reports for reproducibility using RMarkdown.</description>
+    </item>
+    
+  </channel>
+</rss>
