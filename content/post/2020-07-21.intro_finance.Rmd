@@ -22,21 +22,34 @@ In this post I will introduce the basics of R such as vectors and matrices, data
 We can select and subset anything using [] where the first argument is always row and second is always column i.e [row, column]. 
 
 # Vectors and matrices
-creating a vector
-```{r}
-# numeric type
+
+Data types:
+
+  * **numeric**: are decimal numbers like 4.5. A special type
+  of numeric is an integer, which is a numeric without a decimal
+  piece. Integers must be specified like 4L.
+  * **Logicals**: are the boolean values TRUE and FALSE. Capital
+  letters are important here; true and false are not valid.
+  * **Characters**: are text values like "hello world".
+  creating a vector.
+
+You can check __data type__ using `class()`
+
+```{r, collapse=TRUE}
 ibm_stock <- c(159.82, 160.02, 159.84)
+class(ibm_stock)
 
-# character type
 finance <- c("stocks", "bonds",  "investments")
+class(finance)
 
-# logical 
 logic <- c(TRUE, FALSE, TRUE)
+class(logic)
 ```
-Note: a vector can only be composed of one data type, otherwise the lower ranking type will be coerced into the higher ranking type. The hierarchy for coercion is:
-    logical < integer < numeric < character
+Note: a vector can only be composed of one data type, otherwise the lower ranking type will be coerced into the higher ranking type. The hierarchy for coercion is: 
 
-```{r}
+> logical < integer < numeric < character 
+
+```{r, collapse=TRUE}
 a <- c(1L , "I am a character")
 typeof(a)
 
