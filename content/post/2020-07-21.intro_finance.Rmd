@@ -93,7 +93,7 @@ If we want to know a relationship between say two stocks. We can either plot a s
 
   * 1 represents perfect positive correlation, 
   * -1 represents perfect negative correlation
-  * 0 correlation means that the stocks move independently of each other. Correlation is a common metric in finance, and it is useful to know how to calculate it in R.
+  * 0 correlation means that the stocks move independently of each other. Correlation is a common metric in finance, and it is useful to know how to calculate it in R. 
 ```{r}
 cor(apple, ibm) # value close to 1 means that stocks of apple and ibm move closely together 
 stocks <- cbind(apple, ibm, microsoft)
