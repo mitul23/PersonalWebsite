@@ -102,7 +102,7 @@ canonifyurls = true
   url = "/index.xml"
 
 [params]
-  dateFormat = "20 July 2020"
+  dateFormat = "2 January 2006"
   keywords = ["data science", "statistics", "machine learning", "predictive modelling", "python", "r"]
   # Customize date format use to render blog post date, categories and other
   # You must use date format used by Go Time package https://golang.org/pkg/time/
