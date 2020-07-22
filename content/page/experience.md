@@ -3,7 +3,7 @@ date: "2020-07-20T21:48:51-07:00"
 title: Experience
 ---
 
-I'm a Theoretical Physicist by background, transitioned into data science as a career. As a theorist, my job was to scribble equations to understand how things out. As part of my Master's thesis, I was working on understand the physics of the very early universe using string theory. For me, Physics and mathematics is never boring, cutting-edge research is very interesting, however I soon realized a career as a theoretical physicist wasn't for me. Hence, I ended up in Data analytics. 
+I'm a Theoretical Physicist by background, transitioned into data science as a career. As a theorist, my job was to scribble equations to understand how things out. As part of my Master's thesis, I was working on understand the physics of the very early universe using string theory. For me, Physics and mathematics is never boring, cutting-edge research is very interesting, however I soon realized that a career as a theoretical physicist in academia wasn't for me. Hence, I ended up in Data analytics. 
 
 During my learning journey into data science I’ve worked on many different data science projects in python as well in R and SQL. However, I’ve had the most extensive experience in implementing all of my learning skills in the healthcare industry. Working with such large amount of messy health data pushed me to coming up with innovative solutions for doing analysis. 
 
