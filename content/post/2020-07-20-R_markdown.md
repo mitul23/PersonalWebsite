@@ -15,7 +15,6 @@ title: R Markdown
 This post shows how to format your RMarkdown. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 <!--more-->
 
-<!-- toc -->
 
 # Markdown
 

@@ -23,6 +23,16 @@
   </url>
   
   <url>
+    <loc>/tags/categorical/</loc>
+    <lastmod>2020-07-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/categorical-data/</loc>
+    <lastmod>2020-07-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/categories/</loc>
     <lastmod>2020-07-21T00:00:00+00:00</lastmod>
   </url>
@@ -34,6 +44,11 @@
   
   <url>
     <loc>/tags/dates/</loc>
+    <lastmod>2020-07-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/dplyr/</loc>
     <lastmod>2020-07-21T00:00:00+00:00</lastmod>
   </url>
   
@@ -98,12 +113,22 @@
   </url>
   
   <url>
+    <loc>/tags/stringr/</loc>
+    <lastmod>2020-07-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/tags/</loc>
     <lastmod>2020-07-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/tags/vectors/</loc>
+    <lastmod>2020-07-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2020/07/categorical-data/</loc>
     <lastmod>2020-07-21T00:00:00+00:00</lastmod>
   </url>
   
@@ -129,6 +154,10 @@
   
   <url>
     <loc>/archives/</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/tidyverse/tidyr/</loc>
   </url>
   
 </urlset>

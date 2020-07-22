@@ -99,6 +99,15 @@ body {text-align: justify};
     </item>
     
     <item>
+      <title>Working with categorical data in R using Tidyverse</title>
+      <link>/2020/07/categorical-data/</link>
+      <pubDate>Tue, 21 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/07/categorical-data/</guid>
+      <description>  body {text-align: justify};  </description>
+    </item>
+    
+    <item>
       <title>R Markdown</title>
       <link>/2020/07/r-markdown/</link>
       <pubDate>Mon, 20 Jul 2020 00:00:00 +0000</pubDate>
