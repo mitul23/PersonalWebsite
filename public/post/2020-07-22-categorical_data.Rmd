@@ -14,6 +14,7 @@ output:
 <style>
 body {text-align: justify};
 </style>
+**INCOMPLETE POST - IN PROGRESS!**
 
 This blog post looks at how to work with non-numerical data, such as job titles, survey responses, or demographic information. R has a special way of representing them, called factors, and in this post we will look at how to deal with them using the tidyverse package forcats. 
 <!--more-->
