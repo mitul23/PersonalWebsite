@@ -59,10 +59,13 @@ typeof(b)
 c <- c(FALSE, 2)
 typeof(c)
 ```
-In finance, the weighted average is an important calculation. It allows you to calculate your portfolio return over a time period. This is how we can use vectors to compute weighted average
+In finance, the weighted average is an important calculation. It allows you to calculate your portfolio return over a time period. Let's consider an example to see how we can use vectors to compute weighted average.
 
-Lets say you have 40% of your cash in Apple stock, and 60% of your cash in IBM stock. If, in January, Apple earned 5% and IBM earned 7%, then your total portfolio return is.... 
-   return_apple * weighted_avg_apple + return_IBM + weighted_avg_IBM
+Lets say you have 40% of your cash in Apple stock, and 60% of your cash in IBM stock. If, in January, Apple earned 5% and IBM earned 7%, then your total portfolio return is
+
+> return_apple * weighted_avg_apple + return_IBM + weighted_avg_IBM
+
+Let's use vectors to store __returns__ and __weights__
 ```{r}  
 returns <-  c(5, 7)
 weights <- c(0.4, 0.6)
@@ -81,8 +84,9 @@ return <- c(5, 2, 3, 7, 8, 3, 5, 9, 1, 4, 6, 3)
 return[2] #2nd element
 return[3:6] #3rd to 6th element
 return[-1] # omit first element
-
-# if we have col names 
+```
+if we have column names 
+```{r}
 names(return) <- c("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec")
 return[c("Feb", "Mar")]
 ```
@@ -90,17 +94,25 @@ creating matrices - we can create matrices from vectors
 
 ```{r}
 v <- c(1, 2, 3, 4)
-matrix(v, nrow = 2, ncol = 2) # notice the matrix is filled by col by default
-
-matrix(v, nrow = 2, ncol = 2, byrow = T) # we can specify byrow = TRUE if we want matrix to be filled by row
+matrix(v, nrow = 2, ncol = 2) 
+```
+Notice the matrix is filled by col by default. We can specify `byrow = TRUE` if we want matrix to be filled by row 
+```{r}
+matrix(v, nrow = 2, ncol = 2, byrow = T) 
 ```
 We can combine multiple vectors to create matrix as follows
 ```{r}
 apple <- c(109.49, 109.90, 109.11, 109.95, 111.03)
 ibm <- c(159.82, 160.02, 159.84, 160.35, 164.79)
 microsoft  <-  c(59.20, 59.25, 60.22, 59.95, 61.37)
-cbind(apple, ibm) # column bind
-rbind(apple, ibm) # row bind
+```
+column bind
+```{r}
+cbind(apple, ibm) 
+```
+row bind
+```{r}
+rbind(apple, ibm) 
 ```
 If we want to know a relationship between say two stocks. We can either plot a scatter plot or we can compute correlation matrix. Correlation is a measure of association between two things, here, stock prices, and is represented by a number from -1 to 1. Few points to note:
 
@@ -163,7 +175,10 @@ cash$double_year <- cash$year * 2
 cash
 ```
 
-present_value <- cash_flow * (1 + interest / 100) ^ -year
+In finance, you can compute present value using following equation 
+
+> present_value <- cash_flow * (1 + interest / 100) ^ -year
+
 ```{r}
 # Present value of $4000, in 3 years, at 5%
 present_value_4k <- 4000 * (1.05) ^ -3
@@ -226,7 +241,7 @@ drop_level <- credit_factor[-c(3,7), drop = TRUE]
 # Plot drop_level
 plot(drop_level)
 ```
-stringsAsFactors - when creating data frames, R is to convert all characters into factors. This causes problems at times, so we can do the following in order to avoid the problem. 
+`stringsAsFactors` - when creating data frames, R is to convert all characters into factors. This causes problems at times, so we can do the following in order to avoid the problem. 
 ```{r}
 credit_rating <- c("AAA", "A", "BB")
 bond_owners <- c("Dan", "Tom", "Joe")
@@ -275,11 +290,7 @@ portfolio
 
 split into two data frames
 ```{r}
-cash <- data.frame(
-    company = rep(c("A","B"),each = 2),
-    cash_flow = c(1000, 4000, 200, 500),
-    year = c(1,3, 1,2)
-)
+cash <- data.frame(company = rep(c("A","B"),each = 2), cash_flow = c(1000, 4000, 200, 500),year = c(1,3, 1,2))
 cash
 
 grouping <- cash$company

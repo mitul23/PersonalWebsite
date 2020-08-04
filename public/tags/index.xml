@@ -6,10 +6,73 @@
     <description>Recent content in Tags on Data lover</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 21 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 28 Jul 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>categorical</title>
+      <link>/tags/categorical/</link>
+      <pubDate>Tue, 28 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/categorical/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>correlation</title>
+      <link>/tags/correlation/</link>
+      <pubDate>Tue, 28 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/correlation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dplyr</title>
+      <link>/tags/dplyr/</link>
+      <pubDate>Tue, 28 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/dplyr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>interpreting ML</title>
+      <link>/tags/interpreting-ml/</link>
+      <pubDate>Tue, 28 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/interpreting-ml/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>R</title>
+      <link>/tags/r/</link>
+      <pubDate>Tue, 28 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/r/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>regression</title>
+      <link>/tags/regression/</link>
+      <pubDate>Tue, 28 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/regression/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>stringr</title>
+      <link>/tags/stringr/</link>
+      <pubDate>Tue, 28 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/stringr/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>apply</title>
@@ -17,15 +80,6 @@
       <pubDate>Tue, 21 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>/tags/apply/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>categorical</title>
-      <link>/tags/categorical/</link>
-      <pubDate>Tue, 21 Jul 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/categorical/</guid>
       <description></description>
     </item>
     
@@ -44,15 +98,6 @@
       <pubDate>Tue, 21 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>/tags/dates/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>dplyr</title>
-      <link>/tags/dplyr/</link>
-      <pubDate>Tue, 21 Jul 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/dplyr/</guid>
       <description></description>
     </item>
     
@@ -107,24 +152,6 @@
       <pubDate>Tue, 21 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>/tags/matrices/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>R</title>
-      <link>/tags/r/</link>
-      <pubDate>Tue, 21 Jul 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/r/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>stringr</title>
-      <link>/tags/stringr/</link>
-      <pubDate>Tue, 21 Jul 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/stringr/</guid>
       <description></description>
     </item>
     
