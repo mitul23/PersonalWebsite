@@ -75,29 +75,11 @@
     </item>
     
     <item>
-      <title>apply</title>
-      <link>/tags/apply/</link>
-      <pubDate>Tue, 21 Jul 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/apply/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>dataframe</title>
       <link>/tags/dataframe/</link>
       <pubDate>Tue, 21 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>/tags/dataframe/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>dates</title>
-      <link>/tags/dates/</link>
-      <pubDate>Tue, 21 Jul 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/dates/</guid>
       <description></description>
     </item>
     
@@ -111,38 +93,11 @@
     </item>
     
     <item>
-      <title>finance</title>
-      <link>/tags/finance/</link>
-      <pubDate>Tue, 21 Jul 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/finance/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>functions</title>
-      <link>/tags/functions/</link>
-      <pubDate>Tue, 21 Jul 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/functions/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>lists</title>
       <link>/tags/lists/</link>
       <pubDate>Tue, 21 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>/tags/lists/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>loops</title>
-      <link>/tags/loops/</link>
-      <pubDate>Tue, 21 Jul 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/loops/</guid>
       <description></description>
     </item>
     
