@@ -18,9 +18,10 @@ defaultContentLanguage = "en-us"
 title = "Data lover"
 theme = "hugo-tranquilpeak-theme"
 disqusShortname = "mitulpatel"
-# googleAnalytics = "UA-123-45"
+googleAnalytics = "UA-123-45"
 paginate = 7
 canonifyurls = true
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
 [permalinks]
   post = "/:year/:month/:slug/"
