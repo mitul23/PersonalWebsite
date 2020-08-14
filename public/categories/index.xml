@@ -6,10 +6,19 @@
     <description>Recent content in Categories on Data lover</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 28 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 14 Aug 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>R basics</title>
+      <link>/categories/r-basics/</link>
+      <pubDate>Fri, 14 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/r-basics/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Categorical data</title>
@@ -26,15 +35,6 @@
       <pubDate>Tue, 28 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>/categories/machine-learning/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>R basics</title>
-      <link>/categories/r-basics/</link>
-      <pubDate>Tue, 21 Jul 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/r-basics/</guid>
       <description></description>
     </item>
     

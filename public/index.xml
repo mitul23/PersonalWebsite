@@ -6,10 +6,23 @@
     <description>Recent content on Data lover</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 28 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 14 Aug 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Introduction to dataframes in R</title>
+      <link>/2020/08/introduction-to-dataframes-in-r.en-us/</link>
+      <pubDate>Fri, 14 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/08/introduction-to-dataframes-in-r.en-us/</guid>
+      <description>
+
+
+&lt;p&gt;In this second blog post in the series of data science in R, I will introduce the basics of data frames. The credit for all the material in this and the future posts goes to &lt;a href=&#34;https://datacamp.com/&#34;&gt;DataCamp&lt;/a&gt;.
+</description>
+    </item>
     
     <item>
       <title>Correlation and Regression in R</title>
