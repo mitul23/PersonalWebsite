@@ -11,58 +11,54 @@
 <meta name="description" content="
 
 
-COMING SOON!
-In this blog, we will look at how to describe relationships between two numerical quantities and perform simple regression models.
+In this second blog post in the series of data science in R, I will introduce the basics of dataframes, factors and lists. The credit for all the material in this and the future posts goes to DataCamp.
 ">
 
 
 <meta property="og:description" content="
 
 
-COMING SOON!
-In this blog, we will look at how to describe relationships between two numerical quantities and perform simple regression models.
+In this second blog post in the series of data science in R, I will introduce the basics of dataframes, factors and lists. The credit for all the material in this and the future posts goes to DataCamp.
 ">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Correlation and Regression in R">
-<meta name="twitter:title" content="Correlation and Regression in R">
-<meta property="og:url" content="/2020/07/regression/">
-<meta property="twitter:url" content="/2020/07/regression/">
+<meta property="og:title" content="Introduction to dataframes, factors and lists in R">
+<meta name="twitter:title" content="Introduction to dataframes, factors and lists in R">
+<meta property="og:url" content="/2020/08/introduction-to-dataframes-factors-and-lists-in-r.en-us/">
+<meta property="twitter:url" content="/2020/08/introduction-to-dataframes-factors-and-lists-in-r.en-us/">
 <meta property="og:site_name" content="Data lover">
 <meta property="og:description" content="
 
 
-COMING SOON!
-In this blog, we will look at how to describe relationships between two numerical quantities and perform simple regression models.
+In this second blog post in the series of data science in R, I will introduce the basics of dataframes, factors and lists. The credit for all the material in this and the future posts goes to DataCamp.
 ">
 <meta name="twitter:description" content="
 
 
-COMING SOON!
-In this blog, we will look at how to describe relationships between two numerical quantities and perform simple regression models.
+In this second blog post in the series of data science in R, I will introduce the basics of dataframes, factors and lists. The credit for all the material in this and the future posts goes to DataCamp.
 ">
 <meta property="og:locale" content="en-us">
 
   
-    <meta property="article:published_time" content="2020-07-28T00:00:00">
+    <meta property="article:published_time" content="2020-08-14T00:00:00">
   
   
-    <meta property="article:modified_time" content="2020-07-28T00:00:00">
+    <meta property="article:modified_time" content="2020-08-14T00:00:00">
   
   
   
     
-      <meta property="article:section" content="machine learning">
+      <meta property="article:section" content="R basics">
     
   
   
+    
+      <meta property="article:tag" content="factors">
+    
+      <meta property="article:tag" content="dataframe">
     
       <meta property="article:tag" content="R">
     
-      <meta property="article:tag" content="regression">
-    
-      <meta property="article:tag" content="correlation">
-    
-      <meta property="article:tag" content="interpreting ML">
+      <meta property="article:tag" content="lists">
     
   
 
@@ -83,14 +79,14 @@ In this blog, we will look at how to describe relationships between two numerica
   <meta property="twitter:image" content="https://www.gravatar.com/avatar/21bc2ded88c08ff71e0586367f12f3e9?s=640">
 
 
-    <title>Correlation and Regression in R</title>
+    <title>Introduction to dataframes, factors and lists in R</title>
 
     <link rel="icon" href="/favicon.png">
     
 
     
 
-    <link rel="canonical" href="/2020/07/regression/">
+    <link rel="canonical" href="/2020/08/introduction-to-dataframes-factors-and-lists-in-r.en-us/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -263,19 +259,19 @@ if (!doNotTrack) {
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
-      Correlation and Regression in R
+      Introduction to dataframes, factors and lists in R
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2020-07-28T00:00:00Z">
+      <time itemprop="datePublished" datetime="2020-08-14T00:00:00Z">
         
   
   
   
   
-    28 July 2020
+    14 August 2020
   
 
       </time>
@@ -285,7 +281,7 @@ if (!doNotTrack) {
   
     <span>in</span>
     
-      <a class="category-link" href="/categories/machine-learning">machine learning</a>
+      <a class="category-link" href="/categories/r-basics">R basics</a>
     
   
 
@@ -296,7 +292,97 @@ if (!doNotTrack) {
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
               </p>
-<p>In this blog, we will look at how to describe relationships between two numerical quantities and perform simple regression models.</p>
+<p>In this post I will introduce dataframes, factors and lists in R. The credit for all the material in this and the future posts goes to <a href="https://datacamp.com/">DataCamp</a>.</p>
+<div id="dataframes" class="section level1">
+<h1>Dataframes</h1>
+<p>Data frames are bascially created from vectors. It consists of rows (i.e observations) and columns (i.e variables or features). Data frames holds a different type of data in each column. We can create a dataframe in R using <code>data.frame()</code>. Let’s create 3 variables and use them to create a data frame and assign it to a variable <code>cash</code> as follows</p>
+<pre class="r"><code>company &lt;- c(&quot;A&quot;, &quot;A&quot;, &quot;A&quot;, &quot;B&quot;, &quot;B&quot;, &quot;B&quot;, &quot;B&quot;)
+cash_flow &lt;- c(1000, 4000, 550, 1500, 1100, 750, 6000)
+year &lt;- c(1, 3, 4, 1, 2, 4, 5)
+cash &lt;- data.frame(
+    company = company,
+    cash_flow = cash_flow, 
+    year = year)
+cash</code></pre>
+<pre><code>##   company cash_flow year
+## 1       A      1000    1
+## 2       A      4000    3
+## 3       A       550    4
+## 4       B      1500    1
+## 5       B      1100    2
+## 6       B       750    4
+## 7       B      6000    5</code></pre>
+<p>We can look at the first few rows and/or tails and/or structure of the data frame using <code>head()</code> and/or <code>tail()</code> and/or <code>str()</code> respectively.</p>
+<pre class="r"><code>head(cash, n=2)</code></pre>
+<pre><code>##   company cash_flow year
+## 1       A      1000    1
+## 2       A      4000    3</code></pre>
+<pre class="r"><code>tail(cash, n=2)</code></pre>
+<pre><code>##   company cash_flow year
+## 6       B       750    4
+## 7       B      6000    5</code></pre>
+<pre class="r"><code>str(cash)</code></pre>
+<pre><code>## &#39;data.frame&#39;:    7 obs. of  3 variables:
+##  $ company  : Factor w/ 2 levels &quot;A&quot;,&quot;B&quot;: 1 1 1 2 2 2 2
+##  $ cash_flow: num  1000 4000 550 1500 1100 750 6000
+##  $ year     : num  1 3 4 1 2 4 5</code></pre>
+<p><code>str</code> is useful if you want to check the data types of each columns in your data frame.</p>
+<p>Just like with vectors and matrices, we can extract or access certain columns or rows of the data frame using <code>[row index, col index/col name]</code>, where you just pass in row index and column index or column name. Let’s look at how we do this with the <code>cash</code> data frame:</p>
+<pre class="r"><code>#thrid row and 2nd col
+cash[3,2]  
+## [1] 550
+
+#fifth row and cash_flow col - notice we used column name here 
+cash[5,&quot;cash_flow&quot;] 
+## [1] 1100</code></pre>
+<p>To extract a specific column, there is shortcut that you can use, <code>$</code></p>
+<pre class="r"><code># extract &quot;year&quot; column using &quot;$&quot;
+cash$year</code></pre>
+<pre><code>## [1] 1 3 4 1 2 4 5</code></pre>
+<pre class="r"><code>cash$cash_flow *2 # manipulate data</code></pre>
+<pre><code>## [1]  2000  8000  1100  3000  2200  1500 12000</code></pre>
+<pre class="r"><code>cash$company &lt;- NULL # delete column
+cash</code></pre>
+<pre><code>##   cash_flow year
+## 1      1000    1
+## 2      4000    3
+## 3       550    4
+## 4      1500    1
+## 5      1100    2
+## 6       750    4
+## 7      6000    5</code></pre>
+<p>Since we deleted a company column in the previous example, here I create our original data frame again;</p>
+<pre class="r"><code>cash &lt;- data.frame(
+    company = company,
+    cash_flow = cash_flow, 
+    year = year)</code></pre>
+<p>We can also subset a data frame using <code>subset()</code> by passing the first argument as data and the second argument as a filter. In the examples below, we subset the data frame to only <code>cash</code> corresponding to company <code>A</code>and rows that have cash flows due in 1 year:</p>
+<pre class="r"><code>subset(cash, company == &quot;A&quot;) # cash flow for only company A</code></pre>
+<pre><code>##   company cash_flow year
+## 1       A      1000    1
+## 2       A      4000    3
+## 3       A       550    4</code></pre>
+<pre class="r"><code>subset(cash, year == 1) # row having cash flow due in a year</code></pre>
+<pre><code>##   company cash_flow year
+## 1       A      1000    1
+## 4       B      1500    1</code></pre>
+<p>We can add a new column using <code>data_frame$new_column</code>. Let’s add <code>quarter_cash</code> column to our data frame by transforming existing columns</p>
+<pre class="r"><code># Quarter cash flow scenario
+cash$quarter_cash &lt;- cash$cash_flow * .25
+
+# Double year scenario
+cash$double_year &lt;- cash$year * 2
+cash</code></pre>
+<pre><code>##   company cash_flow year quarter_cash double_year
+## 1       A      1000    1        250.0           2
+## 2       A      4000    3       1000.0           6
+## 3       A       550    4        137.5           8
+## 4       B      1500    1        375.0           2
+## 5       B      1100    2        275.0           4
+## 6       B       750    4        187.5           8
+## 7       B      6000    5       1500.0          10</code></pre>
+<p>Hopefully this will get you started with data frames in R.</p>
+</div>
 
               
             </div>
@@ -309,13 +395,13 @@ if (!doNotTrack) {
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">TAGGED IN</span><br/>
                     
+  <a class="tag tag--primary tag--small" href="/tags/factors/">factors</a>
+
+  <a class="tag tag--primary tag--small" href="/tags/dataframe/">dataframe</a>
+
   <a class="tag tag--primary tag--small" href="/tags/r/">R</a>
 
-  <a class="tag tag--primary tag--small" href="/tags/regression/">regression</a>
-
-  <a class="tag tag--primary tag--small" href="/tags/correlation/">correlation</a>
-
-  <a class="tag tag--primary tag--small" href="/tags/interpreting-ml/">interpreting ML</a>
+  <a class="tag tag--primary tag--small" href="/tags/lists/">lists</a>
 
                   </div>
                 
@@ -328,7 +414,7 @@ if (!doNotTrack) {
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="/2020/08/introduction-to-dataframes-in-r.en-us/" data-tooltip="Introduction to dataframes in R">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -336,7 +422,7 @@ if (!doNotTrack) {
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="/2020/07/categorical-data/" data-tooltip="Working with categorical data in R using Tidyverse">
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2020/07/regression/" data-tooltip="Correlation and Regression in R">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -403,7 +489,7 @@ s.setAttribute('data-timestamp', +new Date());
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="/2020/08/introduction-to-dataframes-in-r.en-us/" data-tooltip="Introduction to dataframes in R">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -411,7 +497,7 @@ s.setAttribute('data-timestamp', +new Date());
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="/2020/07/categorical-data/" data-tooltip="Working with categorical data in R using Tidyverse">
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2020/07/regression/" data-tooltip="Correlation and Regression in R">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -537,9 +623,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = '\/2020\/07\/regression\/';
+          this.page.url = '\/2020\/08\/introduction-to-dataframes-factors-and-lists-in-r.en-us\/';
           
-            this.page.identifier = '\/2020\/07\/regression\/'
+            this.page.identifier = '\/2020\/08\/introduction-to-dataframes-factors-and-lists-in-r.en-us\/'
           
         };
         (function() {

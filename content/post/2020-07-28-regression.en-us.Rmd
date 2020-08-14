@@ -13,7 +13,7 @@ tags:
 keywords:
   - tech
 ---
-
+**COMING SOON!**  
 In this blog, we will look at how to describe relationships between two numerical quantities and perform simple regression models.
 <!--more-->
 
