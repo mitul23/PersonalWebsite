@@ -12,7 +12,7 @@ large amount of health data, extracting useful information in the graphical form
 
 My main role as a data analyst in healthcare are:
 * cleaning/manipulating of health data in Canadian, USA, and UK cohorts, within individuals with autoimmune diseases and psychiatric disorders. 
-* Create predictive models such as logistic regression, based on the insightful analysis. Implement PCA on high dimensional data.
+* Create predictive models such as regressions, based on the insightful analysis. Implement PCA on high dimensional data.
 * Stays up-to-date with research in the field by reading new/recent journal articles related to the research.
 
 I'm a data-lover and would like to explore some interesting fields. This website will host my learning experience as well to store all my code in one place.
