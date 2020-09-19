@@ -34,7 +34,9 @@ body {text-align: justify};
 
 This blog post looks at how to work with non-numerical data, such as job titles, survey responses, or demographic information. R has a special way of representing them, called factors, and in this post we will look at how to deal with them using the tidyverse package forcats. 
 <!--more-->
-In addition to forcasts, we will also use other tidyverse packages, including ggplot2, dplyr, stringr, and tidyr along with two sample datasets- fivethirtyeight flight dataset and Kaggle’s State of Data Science and ML Survey. 
+This blog post looks at how to work with non-numerical data, such as job titles, survey responses, or demographic information. R has a special way of representing them, called factors, and in this post we will look at how to deal with them using the tidyverse package forcats. 
+
+In addition to forcasts, we will also use other tidyverse packages, including ggplot2, dplyr, stringr, and tidyr along with two sample datasets- **_fivethirtyeight_** flight dataset and **_Kaggle’s State of Data Science and ML Survey_**. 
 
 The libraries we will be using in this blog are 
 ```{r, message=FALSE}
@@ -45,25 +47,27 @@ library(tidyverse)
 
 ## Intro to factors variables
 
-Here are the two sample datasets we will be using, one of the dataset is the kaggle survery data
+Let's check out the datasets before we start our analysis
 ```{r}
 flying_etiquette <- fread("~/Desktop/R_tutorials/data/flying-etiquette.csv") %>% 
     as_tibble()
 str(flying_etiquette)
+```
 
+```{r}
 kaggle_sur <- fread("~/Desktop/R_tutorials/data/kaggle_sur.csv") %>%
     as_tibble()
 str(kaggle_sur)
 ```
 
-To check whether a particular variable is a factor or not, we simply pass the data and the variable to `is.factor()` and we get a boolean as an output
+We have columns of various datatypes, the goal of this post is to work with categorical features (i.e columns that are of type factors). To check whether a particular variable is a factor or not, we simply pass the data and the variable to `is.factor()` and we get a boolean as an output
 
 ```{r}
 is.factor(kaggle_sur$CurrentJobTitleSelect)
 ```
 We get `FALSE` which means we will need to convert this to a factor. 
 
-You are probabaly aware of `mutate()` and `summarise()` in **dply**, here we look at slight modified version of these `mutate_if()`, `summarise_if`, `mutate_all()` and `summarise_all`. `mutate_if()` and `summarise_if` apply their second argument, a function, to all columns where the first argument is true, and `mutate_all()` and `summarise_all()` take one argument, a function, and apply it to all columns. Let's convert all the columns that are characters (note first argument has to be true) to factors
+You are probabaly aware of `mutate()` and `summarise()` in **dply**, here we look at a slight modified version of these - `mutate_if()`, `summarise_if`, `mutate_all()` and `summarise_all`. `mutate_if()` and `summarise_if` apply their second argument, a function, to all columns where the first argument is true, and `mutate_all()` and `summarise_all()` take one argument, a function, and apply it to all columns. Let's convert all the columns that are characters (note first argument has to be true) to factors
 
 ```{r}
 responses_as_factors <- kaggle_sur %>%
@@ -71,7 +75,7 @@ responses_as_factors <- kaggle_sur %>%
 str(responses_as_factors)
 ```
 
-Now we can find the number of levels in each column using
+Now we can find the number of _levels_ in each column with the following code
 ```{r, collapse=TRUE}
 number_of_levels <- responses_as_factors %>%
     summarise_all(nlevels) %>%
@@ -126,11 +130,10 @@ kaggle_sur %>%
   ggplot(aes(x = CurrentJobTitleSelect, y = mean_age)) + 
   geom_point() +
   coord_flip()
-  
 ```
 
 ## Manipulating factor variables
-```{r}
+```{r, eval=FALSE, echo=FALSE}
 levels(responses_as_factors$WorkInternalVsExternalTools)
 mc_responses_reordered <- responses_as_factors %>%
     mutate(WorkInternalVsExternalTools =
@@ -140,7 +143,7 @@ mc_responses_reordered <- responses_as_factors %>%
                          internal and half external", "More
                          external than internal", "Entirely
                          external", "Do not know"))
-ggplot(mc_responses_reordered, aes(WorkInternalVsExternalTools)) + 
+ggplot(mc_responses_reordered,  aes(fct_infreq(WorkInternalVsExternalTools))) + 
     geom_bar() + 
     coord_flip()
 
@@ -166,7 +169,7 @@ responses_as_factors %>%
     levels()
 
 ggplot(responses_as_factors, aes(FormalEducation)) + 
-    geom_bar()
+    geom_bar() 
 
 responses_as_factors %>%
     # rename the appropriate levels to "High school" and "Some college"
@@ -176,7 +179,7 @@ responses_as_factors %>%
     "No answer" = "I prefer not to answer")) %>%
     # make a bar plot of FormalEducation
     ggplot(aes(x = FormalEducation)) + 
-    geom_bar()
+    geom_bar() 
 
 responses_as_factors %>%
     # Create new variable, grouped_titles, by collapsing levels in CurrentJobTitleSelect
@@ -213,7 +216,7 @@ responses_as_factors %>%
 recode - to change bunch of values in a col to something else. Remember that when recoding numeric variables, you need to put the old value in backticks. .default option see Working with Data in the Tidyverse n parse_number.
 
 ## Creating factors variable
-```{r}
+```{r, eval=FALSE, echo=FALSE}
 learning_platform_usefulness <- responses_as_factors %>%
   # select columns with LearningPlatformUsefulness in title
   select(contains("LearningPlatformUsefulness")) %>%
@@ -233,7 +236,7 @@ ggplot(perc_useful_platform, aes(x = usefulness, y = perc, group = learning_plat
   facet_wrap(~ learning_platform)
 ```
 
-```{r}
+```{r, eval=FALSE, echo=FALSE}
 usefulness_by_platform <- learning_platform_usefulness %>%
     # If usefulness is "Not Useful", make 0, else 1 
     mutate(usefulness = if_else(usefulness == "Not Useful", 0, 1)) %>%
@@ -261,7 +264,7 @@ usefulness_by_platform %>%
   
 ```
 
-```{r}
+```{r, eval=FALSE, echo=FALSE}
 responses_as_factors %>%
     # Filter for rows where Age is between 10 and 90
     filter(between(Age, 10, 90)) %>%
@@ -276,7 +279,7 @@ responses_as_factors %>%
     # Get a count of how many answers in each generation
     count(generation)
 ```
-```{r}
+```{r, eval=FALSE, echo=FALSE}
 multiple_choice_responses <-  responses_as_factors %>% 
   mutate(JobSatisfaction = recode(JobSatisfaction, "I prefer not to share" = 'NA')) %>% 
   separate(JobSatisfaction, into = ("JobSatisfaction"), sep = "-") 
@@ -296,7 +299,7 @@ multiple_choice_responses %>%
 ```
 
 # Case study
-```{r}
+```{r, eval=FALSE, echo=FALSE}
 gathered_data <- flying_etiquette %>%
     mutate_if(is.character, as.factor) %>%
     filter(`How often do you travel by plane?` != "Never") %>%
@@ -312,7 +315,7 @@ Expression | Does this
 *	       |  zero or more times
            |
 
-```{r}
+```{r, eval=FALSE, echo=FALSE}
 gathered_data %>%
     # Remove everything before and including "rude to " (with that space at the end!)
     mutate(response_var = str_remove(response_var, ".*rude to ")) %>%
@@ -321,7 +324,7 @@ gathered_data %>%
 ```
 
 
-```{r}
+```{r, eval=FALSE, echo=FALSE}
 rude_behaviors <- gathered_data %>%
     mutate(response_var = str_replace(response_var, '.*rude to ', '')) %>%
     mutate(response_var = str_replace(response_var, 'on a plane', '')) %>%
@@ -344,7 +347,7 @@ rude_behaviors <- rude_behaviors %>%
 rude_behaviors
 ```
 
-```{r}
+```{r, eval=FALSE, echo=FALSE}
 initial_plot <- rude_behaviors %>%
 	# reorder response_var by perc_rude
 	mutate(response_var = fct_reorder(response_var, perc_rude)) %>%
@@ -376,7 +379,7 @@ flipped_plot <- titled_plot +
 flipped_plot
 ```
 
-```{r}
+```{r, eval=FALSE, echo=FALSE}
 library(scales)
 flipped_plot + 
     # Apply percent() to perc_rude to label above the bar with the perc value
